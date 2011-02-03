@@ -1,0 +1,5 @@
+= simple_form_for @rails_gem do |f|
+  %h2 Add a gem
+  = f.input :name, :label => 'Name of the gem'
+  = f.input :tag_list, :label => 'Tags associated with this gem'
+  = f.button :submit

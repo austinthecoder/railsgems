@@ -1,4 +1,8 @@
 en:
+  helpers:
+    submit:
+      rails_gem:
+        create: "Add"
   simple_form:
     "yes": 'Yes'
     "no": 'No'

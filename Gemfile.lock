@@ -29,6 +29,7 @@ GEM
       activemodel (= 3.0.3)
       activesupport (= 3.0.3)
     activesupport (3.0.3)
+    acts-as-taggable-on (2.0.6)
     arel (2.0.7)
     attribute_normalizer (0.3.1)
     autotest (4.4.6)
@@ -141,6 +142,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on (= 2.0.6)
   attribute_normalizer (= 0.3.1)
   autotest (~> 4.4.6)
   capybara (~> 0.4.0)
@@ -148,7 +150,7 @@ DEPENDENCIES
   cucumber-rails (~> 0.3.2)
   dalli (= 1.0.1)
   database_cleaner (~> 0.6.0)
-  exceptional
+  exceptional (= 2.0.32)
   factory_girl_rails (~> 1.1.beta1)
   haml (= 3.0.25)
   launchy (~> 0.3.7)
