@@ -7,6 +7,7 @@ gem 'compass', '0.10.6'
 gem 'simple_form', '1.3.0'
 gem 'attribute_normalizer', '0.3.1'
 gem 'dalli', '1.0.1'
+gem 'exceptional'
 
 group :test do
   gem 'capybara', '~> 0.4.0'
