@@ -1,32 +1,47 @@
 class RailsGem < ActiveRecord::Base
 
+  ERROR_MSGS = {
+    :not_unique => 'has already been added!',
+    :bad_format => 'must be a combination of letters, numbers, dashes, and underscores (with at least one letter)',
+    :not_exists => 'That gem does not exist'
+  }
+
   acts_as_taggable
 
   normalize_attribute :name
 
-  validates :name, :presence => true, :uniqueness => {:message => 'has already been added!'}
-
+  ### validations ###
   validate do
-    unless name.blank?
-      case name
-      when /^[^a-z]*$/i
-        errors.add(:name, "must include at least one letter")
-      when /[^\w\-]+/i
-        errors.add(:name, "can only include letters, numbers, dashes, and underscores")
-      else
-        unless RubyGems::Gem.find(name)
-          errors.add(:base, "That gem does not exist")
-        end
+    unless valid_name_format?
+      errors.add(:name, ERROR_MSGS[:bad_format])
+    end
+  end
+  validates :name, :uniqueness => {
+    :message => ERROR_MSGS[:not_unique],
+    :if => :valid_name_format?
+  }
+  validate do
+    if valid_name_format? && errors[:name].exclude?(ERROR_MSGS[:not_unique])
+      unless RubyGems::Gem.exists?(name)
+        errors.add(:base, ERROR_MSGS[:not_exists])
       end
     end
   end
 
+  ### instance methods ###
   def ==(other)
     if new_record? && other.new_record?
       attributes == other.attributes
     else
       super
     end
+  end
+
+  private
+
+  def valid_name_format?
+    # present, contains a letter, and doesn't contain non word/dash chars
+    name.present? && (name =~ /[a-z]/i) && (name =~ /^[\w\-]+$/i)
   end
 
 end

@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :rails_gem do
-    name "gem-name"
+    name "gem1"
   end
 end

@@ -1,10 +1,12 @@
 Feature: Adding Gems
 
   Scenario: Successful add
+    Given the "devise" gem exists
+
     When I go to the home page
     And I fill in the following:
       | Name of the gem               | devise              |
-      | Tags associated with this gem | authentication auth |
+      | Tags associated with this gem | authentication, auth |
     And I press "Add"
     Then I should see "Thanks for adding devise!"
 
@@ -16,21 +18,21 @@ Feature: Adding Gems
     When I go to the home page
     And I fill in "Name of the gem" with "<gem name>"
     And I press "Add"
-    Then I should see "<error message>"
+    Then I should see "must be a combination of letters, numbers, dashes, and underscores (with at least one letter)"
 
     Examples:
-      | gem name    | error message                                              |
-      |             | can't be blank                                             |
-      | 867-897     | must include at least one letter                           |
-      | __          | must include at least one letter                           |
-      | -345        | must include at least one letter                           |
-      | d.asf       | can only include letters, numbers, dashes, and underscores |
-      | oija aljdsf | can only include letters, numbers, dashes, and underscores |
-      | KLJ#8768    | can only include letters, numbers, dashes, and underscores |
+      | gem name    |
+      |             |
+      | 867-897     |
+      | __          |
+      | -345        |
+      | d.asf       |
+      | oija aljdsf |
+      | KLJ#8768    |
 
 
   Scenario: Gem doesn't exist
-    Given the gem "unknown-gem" does not exist
+    Given the "unknown-gem" gem does not exist
 
     When I go to the home page
     And I fill in "Name of the gem" with "unknown-gem"
@@ -39,6 +41,8 @@ Feature: Adding Gems
 
 
   Scenario: Gem already added
+    Given the "devise" gem exists
+
     When I go to the home page
     And I fill in the following:
       | Name of the gem | devise |
