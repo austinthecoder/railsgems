@@ -1,5 +1,8 @@
 = simple_form_for @rails_gem do |f|
   %h2 Add a gem
+  - if @rails_gem.errors.present?
+    - @rails_gem.errors[:base].each do |msg|
+      %p.error= msg
   = f.input :name, :label => 'Name of the gem'
   = f.input :tag_list, :label => 'Tags associated with this gem'
   = f.button :submit

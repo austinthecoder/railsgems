@@ -52,6 +52,12 @@ form {
   padding: 2px 10px;
 }
 
+.error {
+  background: #600;
+  color: #fff;
+  padding: 2px 10px;
+}
+
 form#new_rails_gem {
   background: #ddd;
   border: 1px solid #ccc;

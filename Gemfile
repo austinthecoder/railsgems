@@ -9,6 +9,8 @@ gem 'attribute_normalizer', '0.3.1'
 gem 'dalli', '1.0.1'
 gem 'exceptional', '2.0.32'
 gem 'acts-as-taggable-on', '2.0.6'
+gem 'httparty', '0.7.3'
+gem 'hashie', '1.0.0'
 
 group :test do
   gem 'capybara', '~> 0.4.0'

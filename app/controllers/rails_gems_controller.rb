@@ -6,7 +6,8 @@ class RailsGemsController < ApplicationController
       flash.notice = "Thanks for adding #{@rails_gem.name}!"
       redirect_to rails_gem_url(@rails_gem)
     else
-      render root_url
+      flash[:error] = "There were some errors, see below."
+      render 'pages/home'
     end
   end
 

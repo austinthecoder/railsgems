@@ -298,6 +298,13 @@ form .input input {
 }
 
 /* line 55, ../../app/stylesheets/screen.scss */
+.error {
+  background: #600;
+  color: #fff;
+  padding: 2px 10px;
+}
+
+/* line 61, ../../app/stylesheets/screen.scss */
 form#new_rails_gem {
   background: #ddd;
   border: 1px solid #ccc;
@@ -305,21 +312,21 @@ form#new_rails_gem {
   width: 400px;
 }
 
-/* line 64, ../../app/stylesheets/screen.scss */
+/* line 70, ../../app/stylesheets/screen.scss */
 #header {
   padding: 20px 30px;
 }
-/* line 67, ../../app/stylesheets/screen.scss */
+/* line 73, ../../app/stylesheets/screen.scss */
 #header h1 {
   margin: 0;
 }
 
-/* line 70, ../../app/stylesheets/screen.scss */
+/* line 76, ../../app/stylesheets/screen.scss */
 #content {
   padding: 20px 30px;
 }
 
-/* line 74, ../../app/stylesheets/screen.scss */
+/* line 80, ../../app/stylesheets/screen.scss */
 #footer {
   background: #e1e1e1;
   color: gray;
@@ -327,7 +334,7 @@ form#new_rails_gem {
   margin-top: 40px;
   padding: 10px 30px;
 }
-/* line 81, ../../app/stylesheets/screen.scss */
+/* line 87, ../../app/stylesheets/screen.scss */
 #footer a {
   color: #6666ff;
 }
