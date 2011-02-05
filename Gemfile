@@ -21,4 +21,5 @@ group :test do
   gem 'database_cleaner', '~> 0'
   gem 'launchy', '~> 0'
   gem 'webmock', '~> 1'
+  gem 'cover_me', '~> 1.0.0.rc5'
 end

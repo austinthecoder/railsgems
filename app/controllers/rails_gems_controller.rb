@@ -18,6 +18,7 @@ class RailsGemsController < ApplicationController
     redirect_to rails_gem_url(@rails_gem)
   end
 
+  ##################################################
   private
 
   def find_rails_gem

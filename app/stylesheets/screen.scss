@@ -82,18 +82,19 @@ form#new_rails_gem {
     margin: 0 0 1.5em 0;
     padding:10px;
 
+    .list {
+      margin-bottom: 1.5em;
+    }
+
     .tag {
       background: #333;
       color: #fff;
-      margin-right: 10px;
       padding: 2px 10px;
     }
 
     form {
-      display: inline;
-
-      * { display: inline; }
       .input {
+        display: inline;
         margin: 0;
         padding: 0;
 
