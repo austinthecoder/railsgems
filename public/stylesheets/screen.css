@@ -285,26 +285,26 @@ form .input {
   margin: 0 0 20px 0;
   padding-right: 8px;
 }
-/* line 41, ../../app/stylesheets/screen.scss */
+/* line 40, ../../app/stylesheets/screen.scss */
 form .input input {
   width: 100%;
 }
 
-/* line 49, ../../app/stylesheets/screen.scss */
+/* line 48, ../../app/stylesheets/screen.scss */
 .notice {
   background: #66f;
   color: #fff;
   padding: 2px 10px;
 }
 
-/* line 55, ../../app/stylesheets/screen.scss */
+/* line 54, ../../app/stylesheets/screen.scss */
 .error {
   background: #600;
   color: #fff;
   padding: 2px 10px;
 }
 
-/* line 61, ../../app/stylesheets/screen.scss */
+/* line 60, ../../app/stylesheets/screen.scss */
 form#new_rails_gem {
   background: #ddd;
   border: 1px solid #ccc;
@@ -312,21 +312,69 @@ form#new_rails_gem {
   width: 400px;
 }
 
+/* line 67, ../../app/stylesheets/screen.scss */
+.rails_gem {
+  border-top: 2px solid #ddd;
+}
 /* line 70, ../../app/stylesheets/screen.scss */
+.rails_gem .rubygems_link {
+  float: right;
+}
+/* line 73, ../../app/stylesheets/screen.scss */
+.rails_gem .title {
+  float: left;
+}
+/* line 75, ../../app/stylesheets/screen.scss */
+.rails_gem .title .version {
+  color: #b3b3b3;
+  margin-left: 10px;
+}
+/* line 80, ../../app/stylesheets/screen.scss */
+.rails_gem .tags {
+  background: #ddd;
+  margin: 0 0 1.5em 0;
+  padding: 10px;
+}
+/* line 85, ../../app/stylesheets/screen.scss */
+.rails_gem .tags .tag {
+  background: #333;
+  color: #fff;
+  margin-right: 10px;
+  padding: 2px 10px;
+}
+/* line 92, ../../app/stylesheets/screen.scss */
+.rails_gem .tags form {
+  display: inline;
+}
+/* line 95, ../../app/stylesheets/screen.scss */
+.rails_gem .tags form * {
+  display: inline;
+}
+/* line 96, ../../app/stylesheets/screen.scss */
+.rails_gem .tags form .input {
+  margin: 0;
+  padding: 0;
+}
+/* line 100, ../../app/stylesheets/screen.scss */
+.rails_gem .tags form .input input {
+  width: auto;
+}
+
+/* line 108, ../../app/stylesheets/screen.scss */
 #header {
   padding: 20px 30px;
 }
-/* line 73, ../../app/stylesheets/screen.scss */
+/* line 111, ../../app/stylesheets/screen.scss */
 #header h1 {
   margin: 0;
 }
 
-/* line 76, ../../app/stylesheets/screen.scss */
+/* line 114, ../../app/stylesheets/screen.scss */
 #content {
   padding: 20px 30px;
 }
 
-/* line 80, ../../app/stylesheets/screen.scss */
+/* line 118, ../../app/stylesheets/screen.scss */
 #footer {
   background: #e1e1e1;
   color: gray;
@@ -334,7 +382,7 @@ form#new_rails_gem {
   margin-top: 40px;
   padding: 10px 30px;
 }
-/* line 87, ../../app/stylesheets/screen.scss */
+/* line 125, ../../app/stylesheets/screen.scss */
 #footer a {
   color: #6666ff;
 }

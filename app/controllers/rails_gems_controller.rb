@@ -1,5 +1,7 @@
 class RailsGemsController < ApplicationController
 
+  before_filter :find_rails_gem, :only => %w(show update)
+
   def create
     @rails_gem = RailsGem.new(params[:rails_gem])
     if @rails_gem.save
@@ -9,6 +11,17 @@ class RailsGemsController < ApplicationController
       flash[:error] = "There were some errors, see below."
       render 'pages/home'
     end
+  end
+
+  def update
+    @rails_gem.update_attributes!(params[:rails_gem])
+    redirect_to rails_gem_url(@rails_gem)
+  end
+
+  private
+
+  def find_rails_gem
+    @rails_gem = RailsGem.find(params[:id])
   end
 
 end

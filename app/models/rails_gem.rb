@@ -37,6 +37,29 @@ class RailsGem < ActiveRecord::Base
     end
   end
 
+  def rubygem
+    @rubygem = RubyGems::Gem.find(name) unless defined?(@rubygem)
+    @rubygem
+  end
+
+  delegate :version, :to => :rubygem
+
+  def rubygem_url
+    rubygem.project_uri
+  end
+
+  def description
+    rubygem.info
+  end
+
+  def additional_tag_names
+    nil
+  end
+
+  def additional_tag_names=(tag_names)
+    self.tag_list = [tag_list.join(','), tag_names.to_s].join(',')
+  end
+
   private
 
   def valid_name_format?

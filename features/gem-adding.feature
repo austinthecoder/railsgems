@@ -1,16 +1,16 @@
 Feature: Adding Gems
 
   Scenario: Successful add
-    Given the "devise" gem exists
+    Given a rubygem exists named "devise"
 
     When I go to the home page
     And I fill in the following:
-      | Name of the gem               | devise              |
+      | Name of the gem               | devise               |
       | Tags associated with this gem | authentication, auth |
     And I press "Add"
     Then I should see "Thanks for adding devise!"
 
-    When I go to the gem's page for devise
+    When I visit the page for that gem
     Then I should not see "This gem is not in our system"
 
 
@@ -32,7 +32,7 @@ Feature: Adding Gems
 
 
   Scenario: Gem doesn't exist
-    Given the "unknown-gem" gem does not exist
+    Given a rubygem does not exist named "unknown-gem"
 
     When I go to the home page
     And I fill in "Name of the gem" with "unknown-gem"
@@ -41,7 +41,7 @@ Feature: Adding Gems
 
 
   Scenario: Gem already added
-    Given the "devise" gem exists
+    Given a rubygem exists named "devise"
 
     When I go to the home page
     And I fill in the following:

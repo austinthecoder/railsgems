@@ -34,7 +34,6 @@ form {
   }
 
   .input {
-    //background: red;
     margin: 0 0 20px 0;
     padding-right: 8px;
 
@@ -63,6 +62,45 @@ form#new_rails_gem {
   border: 1px solid #ccc;
   padding: 20px;
   width: 400px;
+}
+
+.rails_gem {
+  border-top: 2px solid #ddd;
+
+  .rubygems_link {
+    float: right;
+  }
+  .title {
+    float: left;
+    .version {
+      color: lighten($font_color, 50%);
+      margin-left: 10px;
+    }
+  }
+  .tags {
+    background: #ddd;
+    margin: 0 0 1.5em 0;
+    padding:10px;
+
+    .tag {
+      background: #333;
+      color: #fff;
+      margin-right: 10px;
+      padding: 2px 10px;
+    }
+
+    form {
+      display: inline;
+
+      * { display: inline; }
+      .input {
+        margin: 0;
+        padding: 0;
+
+        input { width: auto; }
+      }
+    }
+  }
 }
 
 //////////////////////////////////////////////////

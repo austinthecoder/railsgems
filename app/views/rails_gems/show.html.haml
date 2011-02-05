@@ -1,0 +1,19 @@
+.rails_gem
+  .rubygems_link= link_to 'View at RubyGems.org', @rails_gem.rubygem_url
+  
+  %h2.title
+    = @rails_gem.name
+    %span.version
+      = @rails_gem.version
+    
+  .clear
+    
+  .tags
+    - unless @rails_gem.tags.empty?
+      - @rails_gem.tags.each do |t|
+        %span.tag= t
+    = simple_form_for @rails_gem do |f|
+      = f.input :additional_tag_names, :label => false, :input_html => {:size => 20}
+      = f.button :submit
+  
+  %p= @rails_gem.description

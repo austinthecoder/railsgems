@@ -1,38 +1,27 @@
-Given /^the "([^"]*)" gem does not exist$/ do |gem_name|
-  raw_response = %|
-HTTP/1.1 404 Not Found
-Date: Fri, 04 Feb 2011 18:35:39 GMT
-Server: Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
-X-Powered-By: Phusion Passenger (mod_rails/mod_rack) 3.0.0
-X-UA-Compatible: IE=Edge,chrome=1
-X-Runtime: 0.005015
-Cache-Control: no-cache
-Status: 404
-Transfer-Encoding: chunked
-Content-Type: application/json; charset=utf-8
+Given /^a gem has been added with the attributes:$/ do |table|
+  attrs = table.transpose.map_headers(
+    'tags' => 'tag_list'
+  ).transpose.rows_hash.symbolize_keys
 
-This rubygem could not be found.
-  |
-
-  stub_request(:get, "http://rubygems.org/api/v1/gems/#{gem_name}.json").to_return(raw_response.strip)
+  RailsGem.create!(attrs)
 end
 
-Given /^the "([^"]*)" gem exists$/ do |gem_name|
-  raw_response = %|
-HTTP/1.1 200 OK
-Date: Fri, 04 Feb 2011 18:28:19 GMT
-Server: Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
-X-Powered-By: Phusion Passenger (mod_rails/mod_rack) 3.0.0
-ETag: "20b402ea8d85b4a2d84c36794a367fe9"
-X-UA-Compatible: IE=Edge,chrome=1
-X-Runtime: 0.013897
-Cache-Control: max-age=0, private, must-revalidate
-Status: 200
-Transfer-Encoding: chunked
-Content-Type: application/json; charset=utf-8
+##################################################
 
-{"dependencies":{"runtime":[],"development":[{"name":"rspec","requirements":">= 2"}]},"name":"#{gem_name}","downloads":545,"info":"Some info about the gem.","version_downloads":73,"version":"1.0.0","homepage_uri":"http://github.com/some_user/#{gem_name}","bug_tracker_uri":null,"source_code_uri":null,"gem_uri":"http://rubygems.org/gems/#{gem_name}-1.0.0.gem","project_uri":"http://rubygems.org/gems/#{gem_name}","authors":"John Smith","mailing_list_uri":null,"documentation_uri":null,"wiki_uri":null}
-  |
+When /^I visit the page for (that gem)$/ do |gem|
+  visit rails_gem_path(gem)
+end
 
-  stub_request(:get, "http://rubygems.org/api/v1/gems/#{gem_name}.json").to_return(raw_response.strip)
+When /^I fill in text box with "([^"]*)" within tags$/ do |value|
+  with_scope(".tags") do
+    fill_in("rails_gem[additional_tag_names]", :with => value)
+  end
+end
+
+##################################################
+
+Then /^I should see "([^"]*)" within tags$/ do |text|
+  with_scope(".tags") do
+    page.should have_content(text)
+  end
 end
