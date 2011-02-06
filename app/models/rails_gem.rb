@@ -22,7 +22,7 @@ class RailsGem < ActiveRecord::Base
   }
   validate do
     if valid_name_format? && errors[:name].exclude?(ERROR_MSGS[:not_unique])
-      unless RubyGems::Gem.exists?(name)
+      unless RubyGems::Gem.find(name)
         errors.add(:base, ERROR_MSGS[:not_exists])
       end
     end

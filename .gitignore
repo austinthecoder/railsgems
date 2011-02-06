@@ -3,6 +3,8 @@
 .rvmrc
 config/database.yml
 config/exceptional.yml
+coverage
+coverage.data
 log/*.log
 tmp/*
 tmp/**/*

@@ -9,7 +9,6 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
   config.include AttributeNormalizer::RSpecMatcher, :type => :model
-  config.include HTTPStubbing
 
   # == Mock Framework
   #
@@ -27,6 +26,4 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
-
-  config.before(:suite) { HTTPStubbing.perform }
 end
