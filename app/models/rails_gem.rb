@@ -47,8 +47,18 @@ class RailsGem < ActiveRecord::Base
     nil
   end
 
+  # TODO: more flexibility
+  # the feature requires this to take a string
+  # it would be nice to accept both string and array
   def additional_tags=(addl_tags)
     self.tags = normalize_tags("#{tags} #{addl_tags}")
+  end
+
+  # TODO: more flexibility
+  # the feature requires this to take an array
+  # it would be nice to accept both array and string
+  def subtractional_tags=(sub_tags_array)
+    self.tags = (tags_array - normalize_tags(sub_tags_array.join(' ')).to_s.split(' ')).join(' ')
   end
 
   def rubygem

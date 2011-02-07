@@ -137,4 +137,43 @@ describe RailsGem, "instance methods" do
     end
   end
 
+  describe "#subtractional_tags=" do
+    context "when there are no existing tags" do
+      before { rg.tags = nil }
+
+      [
+        [],
+        ['one'],
+        ['one', 'two']
+      ].each do |given_tags|
+        context "when the given tags are #{given_tags.inspect}" do
+          it "tags should remain as nil" do
+            rg.subtractional_tags = given_tags
+            rg.tags.should be_nil
+          end
+        end
+      end
+    end
+
+    context "when the existing tags are 'one two'" do
+      before { rg.tags = 'one two' }
+
+      [
+        [[], 'one two'],
+        [['one'], 'two'],
+        [['one', 'two'], nil],
+        [['one', 'three'], 'two'],
+        [['four', 'three'], 'one two'],
+        [['one', 'three', 'two', 'four'], nil]
+      ].each do |given_tags, tags|
+        context "when the given tags are #{given_tags.inspect}" do
+          it "sets the tags to #{tags.inspect}" do
+            rg.subtractional_tags = given_tags
+            rg.tags.should eq(tags)
+          end
+        end
+      end
+    end
+  end
+
 end

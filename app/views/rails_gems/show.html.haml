@@ -7,14 +7,13 @@
       = @rails_gem.version
     
   .clear
-    
+  
   .tags
+    .edit
+      = link_to 'edit tags', edit_rails_gem_tags_path(@rails_gem)
     .list
       - unless @rails_gem.tags_array.empty?
         - @rails_gem.tags_array.each do |t|
           %span.tag= t
-    = simple_form_for @rails_gem do |f|
-      = f.input :additional_tags, :label => false, :input_html => {:size => 30}
-      = f.button :submit
   
   %p= @rails_gem.description

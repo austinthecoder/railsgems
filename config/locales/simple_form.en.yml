@@ -3,7 +3,7 @@ en:
     submit:
       rails_gem:
         create: "Add"
-        update: "Add Tags"
+        update: "Save"
   simple_form:
     "yes": 'Yes'
     "no": 'No'
