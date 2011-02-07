@@ -1,3 +1,7 @@
+%h3
+  Editing tags for
+  = link_to @rails_gem.name, rails_gem_path(@rails_gem)
+
 = simple_form_for @rails_gem do |f|
   - unless f.object.tags_array.empty?
     %div

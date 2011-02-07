@@ -10,7 +10,7 @@
   
   .tags
     .edit
-      = link_to 'edit tags', edit_rails_gem_tags_path(@rails_gem)
+      = link_to 'add/remove tags', edit_rails_gem_tags_path(@rails_gem)
     .list
       - unless @rails_gem.tags_array.empty?
         - @rails_gem.tags_array.each do |t|

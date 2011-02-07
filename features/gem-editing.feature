@@ -8,7 +8,7 @@ Feature: Editing Gems
       | tags | auth login |
 
     When I visit the page for that gem
-    And I follow "edit tags"
+    And I follow "add/remove tags"
     And I check "auth"
     And I fill in "Add tags" with "authentication users"
     And I press "Save"
