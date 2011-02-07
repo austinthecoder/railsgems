@@ -20,13 +20,19 @@
         })();
   %body
     #header
-      %h1= image_tag "/images/logo.png", :alt => "RubyGems", :title => "RubyGems: Gems related to the Rails framework"
+      %h1
+        %span
+          RailsGems: Gems related to the Rails framework
+    #menu
+      %ul
+        %li= link_to 'Add a gem', root_url
     #content
-      - if flash.notice
-        %p.notice= flash.notice
-      - if flash[:error]
-        %p.error= flash[:error]
-      = yield
+      .inner
+        - if flash.notice
+          %p.notice= flash.notice
+        - if flash[:error]
+          %p.error= flash[:error]
+        = yield
     #footer
       Built by
       = link_to "Austin Schneider", "http://austinschneider.com"

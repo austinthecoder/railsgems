@@ -4,5 +4,5 @@
     - @rails_gem.errors[:base].each do |msg|
       %p.error= msg
   = f.input :name, :label => 'Name of the gem'
-  = f.input :tag_list, :label => 'Tags associated with this gem'
+  = f.input :tags, :label => 'Tags associated with this gem'
   = f.button :submit

@@ -306,79 +306,103 @@ form .input input {
 
 /* line 60, ../../app/stylesheets/screen.scss */
 form#new_rails_gem {
-  background: #ddd;
-  border: 1px solid #ccc;
+  background: #ccc;
+  border: 1px solid #bbb;
   padding: 20px;
-  width: 400px;
 }
 
 /* line 67, ../../app/stylesheets/screen.scss */
-.rails_gem {
-  border-top: 2px solid #ddd;
-}
-/* line 70, ../../app/stylesheets/screen.scss */
 .rails_gem .rubygems_link {
   float: right;
 }
-/* line 73, ../../app/stylesheets/screen.scss */
+/* line 70, ../../app/stylesheets/screen.scss */
 .rails_gem .title {
   float: left;
 }
-/* line 75, ../../app/stylesheets/screen.scss */
+/* line 72, ../../app/stylesheets/screen.scss */
 .rails_gem .title .version {
   color: #b3b3b3;
   margin-left: 10px;
 }
-/* line 80, ../../app/stylesheets/screen.scss */
+/* line 77, ../../app/stylesheets/screen.scss */
 .rails_gem .tags {
-  background: #ddd;
+  background: #ccc;
   margin: 0 0 1.5em 0;
   padding: 10px;
 }
-/* line 85, ../../app/stylesheets/screen.scss */
+/* line 82, ../../app/stylesheets/screen.scss */
 .rails_gem .tags .list {
   margin-bottom: 1.5em;
 }
-/* line 89, ../../app/stylesheets/screen.scss */
+/* line 86, ../../app/stylesheets/screen.scss */
 .rails_gem .tags .tag {
   background: #333;
   color: #fff;
   padding: 2px 10px;
 }
-/* line 96, ../../app/stylesheets/screen.scss */
+/* line 93, ../../app/stylesheets/screen.scss */
 .rails_gem .tags form .input {
   display: inline;
   margin: 0;
   padding: 0;
 }
-/* line 101, ../../app/stylesheets/screen.scss */
+/* line 98, ../../app/stylesheets/screen.scss */
 .rails_gem .tags form .input input {
   width: auto;
 }
 
-/* line 109, ../../app/stylesheets/screen.scss */
+/* line 106, ../../app/stylesheets/screen.scss */
 #header {
   padding: 20px 30px;
 }
-/* line 112, ../../app/stylesheets/screen.scss */
+/* line 109, ../../app/stylesheets/screen.scss */
 #header h1 {
+  background: url("/images/logo.png") no-repeat left center;
+  height: 69px;
   margin: 0;
 }
-
-/* line 115, ../../app/stylesheets/screen.scss */
-#content {
-  padding: 20px 30px;
+/* line 114, ../../app/stylesheets/screen.scss */
+#header h1 span {
+  display: none;
 }
 
-/* line 119, ../../app/stylesheets/screen.scss */
-#footer {
-  background: #e1e1e1;
-  color: gray;
-  font-size: .8em;
-  margin-top: 40px;
+/* line 120, ../../app/stylesheets/screen.scss */
+#menu {
+  background: #333;
+  color: #fff;
   padding: 10px 30px;
 }
-/* line 126, ../../app/stylesheets/screen.scss */
+/* line 125, ../../app/stylesheets/screen.scss */
+#menu a {
+  color: #99f;
+}
+/* line 129, ../../app/stylesheets/screen.scss */
+#menu ul {
+  margin: 0;
+}
+/* line 132, ../../app/stylesheets/screen.scss */
+#menu ul li {
+  list-style: none;
+}
+
+/* line 138, ../../app/stylesheets/screen.scss */
+#content {
+  background: #ddd;
+}
+/* line 141, ../../app/stylesheets/screen.scss */
+#content .inner {
+  padding: 30px;
+}
+
+/* line 146, ../../app/stylesheets/screen.scss */
+#footer {
+  background: #333;
+  color: #666;
+  clear: both;
+  font-size: .8em;
+  padding: 10px 30px;
+}
+/* line 153, ../../app/stylesheets/screen.scss */
 #footer a {
   color: #6666ff;
 }

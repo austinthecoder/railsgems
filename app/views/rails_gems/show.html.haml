@@ -10,11 +10,11 @@
     
   .tags
     .list
-      - unless @rails_gem.tags.empty?
-        - @rails_gem.tags.each do |t|
+      - unless @rails_gem.tags_array.empty?
+        - @rails_gem.tags_array.each do |t|
           %span.tag= t
     = simple_form_for @rails_gem do |f|
-      = f.input :additional_tag_names, :label => false, :input_html => {:size => 30}
+      = f.input :additional_tags, :label => false, :input_html => {:size => 30}
       = f.button :submit
   
   %p= @rails_gem.description

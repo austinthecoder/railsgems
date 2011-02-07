@@ -6,8 +6,6 @@ class RailsGem < ActiveRecord::Base
     :not_exists => 'That gem does not exist'
   }
 
-  acts_as_taggable
-
   normalize_attribute :name
 
   ### validations ###
@@ -37,6 +35,22 @@ class RailsGem < ActiveRecord::Base
     end
   end
 
+  def tags=(tags)
+    self[:tags] = normalize_tags(tags)
+  end
+
+  def tags_array
+    tags.to_s.split(' ')
+  end
+
+  def additional_tags
+    nil
+  end
+
+  def additional_tags=(addl_tags)
+    self.tags = normalize_tags("#{tags} #{addl_tags}")
+  end
+
   def rubygem
     @rubygem = RubyGems::Gem.find(name) unless defined?(@rubygem)
     @rubygem
@@ -52,15 +66,11 @@ class RailsGem < ActiveRecord::Base
     rubygem.info
   end
 
-  def additional_tag_names
-    nil
-  end
-
-  def additional_tag_names=(tag_names)
-    self.tag_list = [tag_list.join(','), tag_names.to_s].join(',')
-  end
-
   private
+
+  def normalize_tags(tags)
+    tags.to_s.gsub(/,/, ' ').gsub(/\s+/, ' ').strip.split(' ').uniq.join(' ').presence
+  end
 
   def valid_name_format?
     # present, contains a letter, and doesn't contain non word/dash chars

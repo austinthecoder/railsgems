@@ -8,7 +8,6 @@ gem 'simple_form', '1.3.0'
 gem 'attribute_normalizer', '0.3.1'
 gem 'dalli', '1.0.2'
 gem 'exceptional', '2.0.32'
-gem 'acts-as-taggable-on', '2.0.6'
 gem 'httparty', '0.7.3'
 gem 'hashie', '1.0.0'
 

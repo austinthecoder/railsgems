@@ -58,15 +58,12 @@ form {
 }
 
 form#new_rails_gem {
-  background: #ddd;
-  border: 1px solid #ccc;
+  background: #ccc;
+  border: 1px solid #bbb;
   padding: 20px;
-  width: 400px;
 }
 
 .rails_gem {
-  border-top: 2px solid #ddd;
-
   .rubygems_link {
     float: right;
   }
@@ -78,7 +75,7 @@ form#new_rails_gem {
     }
   }
   .tags {
-    background: #ddd;
+    background: #ccc;
     margin: 0 0 1.5em 0;
     padding:10px;
 
@@ -109,18 +106,48 @@ form#new_rails_gem {
 #header {
   padding: 20px 30px;
 
-  h1 { margin: 0; }
+  h1 {
+    background: url($images_path + '/logo.png') no-repeat left center;
+    height: 69px;
+    margin: 0;
+
+    span {
+      display: none;
+    }
+  }
+}
+
+#menu {
+  background: #333;
+  color: #fff;
+  padding: 10px 30px;
+
+  a {
+    color: #99f;
+  }
+
+  ul {
+    margin: 0;
+
+    li {
+      list-style: none;
+    }
+  }
 }
 
 #content {
-  padding: 20px 30px;
+  background: #ddd;
+
+  .inner {
+    padding: 30px;
+  }
 }
 
 #footer {
-  background: darken($bg_color, 5%);
-  color: lighten($font_color, 30%);
+  background: #333;
+  color: #666;
+  clear: both;
   font-size: .8em;
-  margin-top: 40px;
   padding: 10px 30px;
 
   a {
