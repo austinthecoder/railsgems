@@ -264,54 +264,55 @@ var {
 
 /* line 18, ../../app/stylesheets/screen.scss */
 body {
-  background: #eeeeee url("/images/bg.png") no-repeat right top;
+  background: #eeeeee url("/images/bg.png") repeat-x left top;
   color: #333333;
   font: 26px "Georgia", "Lucida Grande", serif;
+  padding-top: 10px;
 }
 
-/* line 24, ../../app/stylesheets/screen.scss */
+/* line 25, ../../app/stylesheets/screen.scss */
 button {
   font-size: 26px;
 }
 
-/* line 26, ../../app/stylesheets/screen.scss */
+/* line 27, ../../app/stylesheets/screen.scss */
 a {
   color: #3333ff;
   text-decoration: none;
 }
 
-/* line 31, ../../app/stylesheets/screen.scss */
+/* line 32, ../../app/stylesheets/screen.scss */
 h1, h2, h3 {
   font-weight: normal;
 }
 
-/* line 34, ../../app/stylesheets/screen.scss */
+/* line 35, ../../app/stylesheets/screen.scss */
 form input {
   font-size: 26px;
 }
-/* line 38, ../../app/stylesheets/screen.scss */
+/* line 39, ../../app/stylesheets/screen.scss */
 form .input {
   margin: 0 0 20px 0;
   padding-right: 8px;
 }
-/* line 42, ../../app/stylesheets/screen.scss */
+/* line 43, ../../app/stylesheets/screen.scss */
 form .input input {
   width: 100%;
 }
 
-/* line 48, ../../app/stylesheets/screen.scss */
+/* line 49, ../../app/stylesheets/screen.scss */
 table {
   width: 100%;
 }
-/* line 51, ../../app/stylesheets/screen.scss */
+/* line 52, ../../app/stylesheets/screen.scss */
 table td, table th {
   border: none;
 }
-/* line 52, ../../app/stylesheets/screen.scss */
+/* line 53, ../../app/stylesheets/screen.scss */
 table tr.even {
   background: #e5e5e5;
 }
-/* line 54, ../../app/stylesheets/screen.scss */
+/* line 55, ../../app/stylesheets/screen.scss */
 table .tags {
   background: none;
   margin: 0;
@@ -319,145 +320,138 @@ table .tags {
   text-align: right;
 }
 
-/* line 64, ../../app/stylesheets/screen.scss */
+/* line 65, ../../app/stylesheets/screen.scss */
 .notice {
   background: #66f;
   color: #fff;
   padding: 2px 10px;
 }
 
-/* line 70, ../../app/stylesheets/screen.scss */
+/* line 71, ../../app/stylesheets/screen.scss */
 .error {
   background: #600;
   color: #fff;
   padding: 2px 10px;
 }
 
-/* line 76, ../../app/stylesheets/screen.scss */
+/* line 77, ../../app/stylesheets/screen.scss */
 form#new_rails_gem {
-  background: #ccc;
+  background: #ddd;
   border: 1px solid #bbb;
   padding: 20px;
 }
 
-/* line 82, ../../app/stylesheets/screen.scss */
+/* line 83, ../../app/stylesheets/screen.scss */
 form#rails_gem_search {
-  background: #ccc;
+  background: #ddd;
   padding: 20px;
   margin: 0 0 20px 0;
 }
-/* line 87, ../../app/stylesheets/screen.scss */
+/* line 88, ../../app/stylesheets/screen.scss */
 form#rails_gem_search label {
   margin-right: 10px;
 }
-/* line 88, ../../app/stylesheets/screen.scss */
+/* line 89, ../../app/stylesheets/screen.scss */
 form#rails_gem_search input {
   width: auto;
 }
-/* line 90, ../../app/stylesheets/screen.scss */
+/* line 91, ../../app/stylesheets/screen.scss */
 form#rails_gem_search .input {
   display: inline;
 }
 
-/* line 94, ../../app/stylesheets/screen.scss */
+/* line 95, ../../app/stylesheets/screen.scss */
 .rails_gem .rubygems_link {
   float: right;
 }
-/* line 97, ../../app/stylesheets/screen.scss */
+/* line 98, ../../app/stylesheets/screen.scss */
 .rails_gem .title {
   float: left;
 }
-/* line 99, ../../app/stylesheets/screen.scss */
+/* line 100, ../../app/stylesheets/screen.scss */
 .rails_gem .title .version {
   color: #b3b3b3;
   margin-left: 10px;
 }
 
-/* line 106, ../../app/stylesheets/screen.scss */
+/* line 107, ../../app/stylesheets/screen.scss */
 .tags {
-  background: #ccc;
+  background: #ddd;
   margin: 0 0 1.5em 0;
   padding: 10px;
 }
-/* line 111, ../../app/stylesheets/screen.scss */
+/* line 112, ../../app/stylesheets/screen.scss */
 .tags .edit {
   float: right;
 }
-/* line 113, ../../app/stylesheets/screen.scss */
+/* line 114, ../../app/stylesheets/screen.scss */
 .tags a.tag {
   background: #3333ff;
   color: #fff;
   padding: 2px 10px;
 }
-/* line 120, ../../app/stylesheets/screen.scss */
+/* line 121, ../../app/stylesheets/screen.scss */
 .tags form .input {
   display: inline;
   margin: 0;
   padding: 0;
 }
-/* line 125, ../../app/stylesheets/screen.scss */
+/* line 126, ../../app/stylesheets/screen.scss */
 .tags form .input input {
   width: auto;
 }
 
-/* line 132, ../../app/stylesheets/screen.scss */
+/* line 133, ../../app/stylesheets/screen.scss */
 #header {
   padding: 20px 30px;
 }
-/* line 135, ../../app/stylesheets/screen.scss */
+/* line 136, ../../app/stylesheets/screen.scss */
 #header #donate {
   float: right;
 }
-/* line 137, ../../app/stylesheets/screen.scss */
+/* line 138, ../../app/stylesheets/screen.scss */
 #header h1 {
   background: url("/images/logo.png") no-repeat left center;
   height: 69px;
   margin: 0;
 }
-/* line 142, ../../app/stylesheets/screen.scss */
+/* line 143, ../../app/stylesheets/screen.scss */
 #header h1 span {
   display: none;
 }
 
-/* line 148, ../../app/stylesheets/screen.scss */
+/* line 149, ../../app/stylesheets/screen.scss */
 #menu {
-  background: #333;
-  color: #fff;
-  padding: 10px 30px;
+  background: url("/images/inset-bar-bg.png") repeat-x left top;
+  font-size: 20px;
+  padding-left: 30px;
 }
-/* line 153, ../../app/stylesheets/screen.scss */
-#menu a {
-  color: #99f;
-}
-/* line 157, ../../app/stylesheets/screen.scss */
+/* line 154, ../../app/stylesheets/screen.scss */
 #menu ul {
   margin: 0;
 }
-/* line 160, ../../app/stylesheets/screen.scss */
+/* line 157, ../../app/stylesheets/screen.scss */
 #menu ul li {
   float: left;
+  line-height: 42px;
   list-style: none;
-  margin-right: 50px;
+  margin-right: 30px;
 }
 
-/* line 168, ../../app/stylesheets/screen.scss */
-#content {
-  background: #ddd;
-}
-/* line 171, ../../app/stylesheets/screen.scss */
+/* line 167, ../../app/stylesheets/screen.scss */
 #content .inner {
   padding: 30px;
 }
 
-/* line 176, ../../app/stylesheets/screen.scss */
+/* line 170, ../../app/stylesheets/screen.scss */
 #footer {
-  background: #333;
-  color: #666;
+  border-top: 1px dotted #ccc;
+  color: #999;
   clear: both;
   font-size: .8em;
   padding: 10px 30px;
 }
-/* line 183, ../../app/stylesheets/screen.scss */
+/* line 177, ../../app/stylesheets/screen.scss */
 #footer a {
   color: #6666ff;
 }
