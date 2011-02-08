@@ -2,6 +2,11 @@ class RailsGemsController < ApplicationController
 
   before_filter :find_rails_gem, :only => %w(show update)
 
+  def index
+    @search = RailsGem.search(params[:search])
+    @results = params[:search].present? ? @search.all : RailsGem.all
+  end
+
   def create
     @rails_gem = RailsGem.new(params[:rails_gem])
     if @rails_gem.save

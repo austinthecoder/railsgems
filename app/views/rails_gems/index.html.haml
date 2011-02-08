@@ -1,0 +1,15 @@
+%h3 Gems
+
+= simple_form_for @search do |f|
+  = label_tag 'search_tags_contains', 'Tags'
+  = f.input :tags_contains, :label => false, :input_html => {:size => 20}
+  %button{:type => 'submit'} Search
+
+.gems
+  - unless @results.empty?
+    %ul
+      - @results.each do |rg|
+        %li= link_to rg.name, rails_gem_path(rg)
+  - else
+    %p
+      %em No gems have been added

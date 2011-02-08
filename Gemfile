@@ -10,6 +10,7 @@ gem 'dalli', '1.0.2'
 gem 'exceptional', '2.0.32'
 gem 'httparty', '0.7.3'
 gem 'hashie', '1.0.0'
+gem 'meta_search', '1.0.1'
 
 group :test do
   gem 'capybara', '~> 0'

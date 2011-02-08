@@ -21,6 +21,8 @@ body {
   font: $font_size 'Georgia', "Lucida Grande", serif;
 }
 
+button { font-size: $font_size; }
+
 a {
   color: $link_color;
   text-decoration: none;
@@ -61,6 +63,17 @@ form#new_rails_gem {
   background: #ccc;
   border: 1px solid #bbb;
   padding: 20px;
+}
+
+form#rails_gem_search  {
+  background: #ccc;
+  padding: 20px;
+  margin: 0 0 20px 0;
+
+  label { margin-right: 10px; }
+  input { width: auto; }
+
+  .input { display: inline; }
 }
 
 .rails_gem {
@@ -128,7 +141,9 @@ form#new_rails_gem {
     margin: 0;
 
     li {
+      float: left;
       list-style: none;
+      margin-right: 50px;
     }
   }
 }
