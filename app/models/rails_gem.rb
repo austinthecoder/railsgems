@@ -35,30 +35,24 @@ class RailsGem < ActiveRecord::Base
     end
   end
 
-  def tags=(tags)
-    self[:tags] = normalize_tags(tags)
+  def tags
+    Tags.new(self[:tags])
   end
 
-  def tags_array
-    tags.to_s.split(' ')
+  def tags=(tags)
+    self[:tags] = Tags.new(tags)
   end
 
   def additional_tags
     nil
   end
 
-  # TODO: more flexibility
-  # the feature requires this to take a string
-  # it would be nice to accept both string and array
   def additional_tags=(addl_tags)
-    self.tags = normalize_tags("#{tags} #{addl_tags}")
+    self.tags = tags + addl_tags
   end
 
-  # TODO: more flexibility
-  # the feature requires this to take an array
-  # it would be nice to accept both array and string
-  def subtractional_tags=(sub_tags_array)
-    self.tags = (tags_array - normalize_tags(sub_tags_array.join(' ')).to_s.split(' ')).join(' ')
+  def subtractional_tags=(sub_tags)
+    self.tags = tags - sub_tags
   end
 
   def rubygem
@@ -81,10 +75,6 @@ class RailsGem < ActiveRecord::Base
   end
 
   private
-
-  def normalize_tags(tags)
-    tags.to_s.gsub(/,/, ' ').gsub(/\s+/, ' ').strip.split(' ').uniq.join(' ').presence
-  end
 
   def valid_name_format?
     # present, contains a letter, and doesn't contain non word/dash chars

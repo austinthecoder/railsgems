@@ -12,8 +12,8 @@
     .edit
       = link_to 'add/remove tags', edit_rails_gem_tags_path(@rails_gem)
     .list
-      - unless @rails_gem.tags_array.empty?
-        - @rails_gem.tags_array.each do |t|
+      - unless @rails_gem.tags.empty?
+        - @rails_gem.tags.each do |t|
           = link_to t, rails_gems_path(:search => {:tags_contains => t}), :class => 'tag'
     .clear
   

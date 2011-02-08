@@ -17,7 +17,7 @@
           %tr.rails_gem{:class => cycle(:even, :odd)}
             %td= link_to rg.name, rails_gem_path(rg)
             %td.tags
-              - rg.tags_array.each do |t|
+              - rg.tags.each do |t|
                 = link_to t, rails_gems_path(:search => {:tags_contains => t}), :class => 'tag'
   - else
     %p

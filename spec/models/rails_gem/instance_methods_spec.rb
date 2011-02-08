@@ -1,17 +1,5 @@
 require 'spec_helper'
 
-def strings_containing_no_tags
-  [nil, '', ' ', ' , ']
-end
-
-def strings_containing_one_tag
-  [' one', 'one ', ' one ', ',one', 'one,', ',one,']
-end
-
-def strings_containing_two_tags
-  ['one,two', 'one two', 'one ,  two']
-end
-
 describe RailsGem, "instance methods" do
 
   let(:rg) { Factory.build(:rails_gem) }
@@ -36,41 +24,26 @@ describe RailsGem, "instance methods" do
 
   describe "#tags=" do
     [
-      [nil, nil],
-      ['', nil],
-      [' ', nil],
-      [' , ', nil],
-      [' one', 'one'],
-      ['one ', 'one'],
-      [' one ', 'one'],
-      [',one', 'one'],
-      ['one,', 'one'],
-      [',one,', 'one'],
-      ['one,two', 'one two'],
-      ['one two', 'one two'],
-      ['one ,  two', 'one two'],
-      ['one two one', 'one two']
+      [nil, Tags.new(nil)],
+      ['', Tags.new(nil)],
+      [' ', Tags.new(nil)],
+      [' , ', Tags.new(nil)],
+      [' one', Tags.new('one')],
+      ['one ', Tags.new('one')],
+      [' one ', Tags.new('one')],
+      [',one', Tags.new('one')],
+      ['one,', Tags.new('one')],
+      [',one,', Tags.new('one')],
+      ['one,two', Tags.new('one two')],
+      ['one two', Tags.new('one two')],
+      ['one ,  two', Tags.new('one two')],
+      ['one two one', Tags.new('one two')]
     ].each do |given_tags, tags|
       context "when the given tags are #{tags.inspect}" do
         it "sets the tags to #{tags.inspect}" do
           rg.tags = given_tags
           rg.tags.should eq(tags)
         end
-      end
-    end
-  end
-
-  describe "#tags_array" do
-    [
-      [nil, []],
-      ['', []],
-      ['one', %w(one)],
-      [%w(one two).join(' '), %w(one two)]
-    ].each do |tags, tags_array|
-      context "when the tags are #{tags.inspect}" do
-        before { rg.tags = tags }
-
-        it { rg.tags_array.should eq(tags_array) }
       end
     end
   end
@@ -84,20 +57,20 @@ describe RailsGem, "instance methods" do
       before { rg.tags = nil }
 
       [
-        [nil, nil],
-        ['', nil],
-        [' ', nil],
-        [' , ', nil],
-        [' one', 'one'],
-        ['one ', 'one'],
-        [' one ', 'one'],
-        [',one', 'one'],
-        ['one,', 'one'],
-        [',one,', 'one'],
-        ['one,two', 'one two'],
-        ['one two', 'one two'],
-        ['one ,  two', 'one two'],
-        ['one two one', 'one two']
+        [nil, Tags.new(nil)],
+        ['', Tags.new(nil)],
+        [' ', Tags.new(nil)],
+        [' , ', Tags.new(nil)],
+        [' one', Tags.new('one')],
+        ['one ', Tags.new('one')],
+        [' one ', Tags.new('one')],
+        [',one', Tags.new('one')],
+        ['one,', Tags.new('one')],
+        [',one,', Tags.new('one')],
+        ['one,two', Tags.new('one two')],
+        ['one two', Tags.new('one two')],
+        ['one ,  two', Tags.new('one two')],
+        ['one two one', Tags.new('one two')]
       ].each do |given_tags, tags|
         context "when the given tags are #{given_tags.inspect}" do
           it "sets the tags to #{tags.inspect}" do
@@ -112,20 +85,20 @@ describe RailsGem, "instance methods" do
       before { rg.tags = 'one two' }
 
       [
-        [nil, 'one two'],
-        ['', 'one two'],
-        [' ', 'one two'],
-        [' , ', 'one two'],
-        [' three', 'one two three'],
-        ['three ', 'one two three'],
-        [' three ', 'one two three'],
-        [',three', 'one two three'],
-        ['three,', 'one two three'],
-        [',three,', 'one two three'],
-        ['three,four', 'one two three four'],
-        ['three four', 'one two three four'],
-        ['three ,  four', 'one two three four'],
-        ['one three four', 'one two three four']
+        [nil, Tags.new('one two')],
+        ['', Tags.new('one two')],
+        [' ', Tags.new('one two')],
+        [' , ', Tags.new('one two')],
+        [' three', Tags.new('one two three')],
+        ['three ', Tags.new('one two three')],
+        [' three ', Tags.new('one two three')],
+        [',three', Tags.new('one two three')],
+        ['three,', Tags.new('one two three')],
+        [',three,', Tags.new('one two three')],
+        ['three,four', Tags.new('one two three four')],
+        ['three four', Tags.new('one two three four')],
+        ['three ,  four', Tags.new('one two three four')],
+        ['one three four', Tags.new('one two three four')]
       ].each do |given_tags, tags|
         context "when the given tags are #{given_tags.inspect}" do
           it "sets the tags to #{tags.inspect}" do
@@ -149,7 +122,7 @@ describe RailsGem, "instance methods" do
         context "when the given tags are #{given_tags.inspect}" do
           it "tags should remain as nil" do
             rg.subtractional_tags = given_tags
-            rg.tags.should be_nil
+            rg.tags.should eq(Tags.new(nil))
           end
         end
       end
@@ -159,12 +132,12 @@ describe RailsGem, "instance methods" do
       before { rg.tags = 'one two' }
 
       [
-        [[], 'one two'],
-        [['one'], 'two'],
-        [['one', 'two'], nil],
-        [['one', 'three'], 'two'],
-        [['four', 'three'], 'one two'],
-        [['one', 'three', 'two', 'four'], nil]
+        [[], Tags.new('one two')],
+        [['one'], Tags.new('two')],
+        [['one', 'two'], Tags.new(nil)],
+        [['one', 'three'], Tags.new('two')],
+        [['four', 'three'], Tags.new('one two')],
+        [['one', 'three', 'two', 'four'], Tags.new(nil)]
       ].each do |given_tags, tags|
         context "when the given tags are #{given_tags.inspect}" do
           it "sets the tags to #{tags.inspect}" do

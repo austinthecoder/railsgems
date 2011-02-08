@@ -3,11 +3,11 @@
   = link_to @rails_gem.name, rails_gem_path(@rails_gem)
 
 = simple_form_for @rails_gem do |f|
-  - unless f.object.tags_array.empty?
+  - unless f.object.tags.empty?
     %div
       %label Remove tags
     %p
-      - f.object.tags_array.each do |t|
+      - f.object.tags.each do |t|
         = check_box_tag 'rails_gem[subtractional_tags][]', t, false, :id => "rails_gem_remove_tag_#{t}"
         = label_tag "rails_gem_remove_tag_#{t}", t
         %br

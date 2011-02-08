@@ -12,7 +12,7 @@ describe RailsGemsController do
         post :create, @params
         rg = RailsGem.last
         rg.name.should eq('gem1')
-        rg.tags.should eq('some tags here')
+        rg.tags.should eq(Tags.new('some tags here'))
       end
 
       it "assigns the rails gem" do
