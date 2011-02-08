@@ -45,6 +45,20 @@ form {
   }
 }
 
+table {
+  width: 100%;
+
+  td, th { border: none; }
+  tr.even { background: #e5e5e5; }
+
+  .tags {
+    background: none;
+    margin: 0;
+    padding: 5px 10px;
+    text-align: right;
+  }
+}
+
 //////////////////////////////////////////////////
 
 .notice {
@@ -87,27 +101,28 @@ form#rails_gem_search  {
       margin-left: 10px;
     }
   }
-  .tags {
-    background: #ccc;
-    margin: 0 0 1.5em 0;
-    padding:10px;
+}
 
-    .edit { float: right; }
+.tags {
+  background: #ccc;
+  margin: 0 0 1.5em 0;
+  padding:10px;
 
-    .tag {
-      background: #333;
-      color: #fff;
-      padding: 2px 10px;
-    }
+  .edit { float: right; }
 
-    form {
-      .input {
-        display: inline;
-        margin: 0;
-        padding: 0;
+  a.tag {
+    background: $link_color;
+    color: #fff;
+    padding: 2px 10px;
+  }
 
-        input { width: auto; }
-      }
+  form {
+    .input {
+      display: inline;
+      margin: 0;
+      padding: 0;
+
+      input { width: auto; }
     }
   }
 }

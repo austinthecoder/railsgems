@@ -14,7 +14,7 @@
     .list
       - unless @rails_gem.tags_array.empty?
         - @rails_gem.tags_array.each do |t|
-          %span.tag= t
+          = link_to t, rails_gems_path(:search => {:tags_contains => t}), :class => 'tag'
     .clear
   
   %p= @rails_gem.description
