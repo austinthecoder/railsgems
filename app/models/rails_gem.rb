@@ -76,6 +76,10 @@ class RailsGem < ActiveRecord::Base
     rubygem.info
   end
 
+  def to_param
+    name if id
+  end
+
   private
 
   def normalize_tags(tags)

@@ -176,4 +176,16 @@ describe RailsGem, "instance methods" do
     end
   end
 
+  describe "#to_param" do
+    context "when unsaved" do
+      it { rg.to_param.should be_nil }
+    end
+
+    context "when saved" do
+      before { rg.save! }
+
+      it { rg.to_param.should eq(rg.name) }
+    end
+  end
+
 end

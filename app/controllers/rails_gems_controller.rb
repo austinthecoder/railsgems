@@ -27,7 +27,7 @@ class RailsGemsController < ApplicationController
   private
 
   def find_rails_gem
-    @rails_gem = RailsGem.find(params[:id])
+    @rails_gem = RailsGem.find_by_name!(params[:id])
   end
 
 end
