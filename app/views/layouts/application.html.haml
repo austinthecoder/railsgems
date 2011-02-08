@@ -30,3 +30,5 @@
       using
       = succeed "." do
         = link_to "Ruby on Rails", "http://rubyonrails.org"
+        
+    = javascript_include_tag "feedback" if Rails.env.production?
