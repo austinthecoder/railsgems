@@ -117,6 +117,8 @@ form#rails_gem_search  {
 #header {
   padding: 20px 30px;
 
+  #donate { float: right; }
+
   h1 {
     background: url($images_path + '/logo.png') no-repeat left center;
     height: 69px;

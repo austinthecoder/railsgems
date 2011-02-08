@@ -384,47 +384,51 @@ form#rails_gem_search .input {
   padding: 20px 30px;
 }
 /* line 120, ../../app/stylesheets/screen.scss */
+#header #donate {
+  float: right;
+}
+/* line 122, ../../app/stylesheets/screen.scss */
 #header h1 {
   background: url("/images/logo.png") no-repeat left center;
   height: 69px;
   margin: 0;
 }
-/* line 125, ../../app/stylesheets/screen.scss */
+/* line 127, ../../app/stylesheets/screen.scss */
 #header h1 span {
   display: none;
 }
 
-/* line 131, ../../app/stylesheets/screen.scss */
+/* line 133, ../../app/stylesheets/screen.scss */
 #menu {
   background: #333;
   color: #fff;
   padding: 10px 30px;
 }
-/* line 136, ../../app/stylesheets/screen.scss */
+/* line 138, ../../app/stylesheets/screen.scss */
 #menu a {
   color: #99f;
 }
-/* line 140, ../../app/stylesheets/screen.scss */
+/* line 142, ../../app/stylesheets/screen.scss */
 #menu ul {
   margin: 0;
 }
-/* line 143, ../../app/stylesheets/screen.scss */
+/* line 145, ../../app/stylesheets/screen.scss */
 #menu ul li {
   float: left;
   list-style: none;
   margin-right: 50px;
 }
 
-/* line 151, ../../app/stylesheets/screen.scss */
+/* line 153, ../../app/stylesheets/screen.scss */
 #content {
   background: #ddd;
 }
-/* line 154, ../../app/stylesheets/screen.scss */
+/* line 156, ../../app/stylesheets/screen.scss */
 #content .inner {
   padding: 30px;
 }
 
-/* line 159, ../../app/stylesheets/screen.scss */
+/* line 161, ../../app/stylesheets/screen.scss */
 #footer {
   background: #333;
   color: #666;
@@ -432,7 +436,7 @@ form#rails_gem_search .input {
   font-size: .8em;
   padding: 10px 30px;
 }
-/* line 166, ../../app/stylesheets/screen.scss */
+/* line 168, ../../app/stylesheets/screen.scss */
 #footer a {
   color: #6666ff;
 }

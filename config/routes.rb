@@ -4,6 +4,8 @@ Railsgems::Application.routes.draw do
     resource :tags, :only => %w(edit)
   end
 
+  get 'about', :to => "pages#about", :as => 'about'
+
   root :to => "pages#home"
 
 end
