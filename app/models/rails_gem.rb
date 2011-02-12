@@ -40,7 +40,7 @@ class RailsGem < ActiveRecord::Base
   end
 
   def tags=(tags)
-    self[:tags] = Tags.new(tags)
+    self[:tags] = Tags.new(tags).to_s
   end
 
   def additional_tags

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.4'
 gem 'pg', '0.10.1'
 gem 'haml', '3.0.25'
 gem 'compass', '0.10.6'
