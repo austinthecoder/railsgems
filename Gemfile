@@ -17,6 +17,7 @@ group :test do
   gem 'rspec-rails', '~> 2'
   gem 'cucumber-rails', '~> 0'
   gem 'autotest', '~> 4'
+  gem 'autotest-rails', '~> 4'
   gem 'factory_girl_rails', '~> 1.1.beta1'
   gem 'database_cleaner', '~> 0'
   gem 'launchy', '~> 0'

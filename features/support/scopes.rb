@@ -1,13 +1,16 @@
 module ScopeHelpers
   # Maps a name to a scope.
-  def scope_to(scope_name)
-    case scope_name
+  def scope_to(scope_str)
+    case scope_str
 
-    when /within tags/
-      ".tags input[type=text]"
+    when /tags/
+      ".tags"
 
     else
-      raise %{Can't find mapping from "#{scope_name}" to a scope.}
+      raise <<-EOS
+Can't find mapping from "#{scope_str}" to a path.
+Now, go and add a mapping in #{__FILE__}
+      EOS
     end
   end
 end
